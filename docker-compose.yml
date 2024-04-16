@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  aristaeus:
+    build:
+      context: .
+      target: dev
+      dockerfile: Dockerfile
+    image: aristaeus-dev
+    container_name: aristaeus-server
+    ports:
+      - '5000:8080'
+    # In production, CI/CD server should have its own role
+    volumes:
+      - $HOME/.aws:/root/.aws
