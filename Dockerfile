@@ -17,8 +17,8 @@ ENV PATH /usr/local/bin:$PATH
 # Copy installation scripts
 COPY scripts/* /scripts/
 
-# Run installation scripts for kubectl
-RUN /scripts/install_kubectl.sh
+# Run installation scripts for minikube and kubectl
+RUN /scripts/install_minikube.sh && /scripts/install_kubectl.sh
 
 # Keep container alive for dev purpose
 ENTRYPOINT ["sleep", "infinity"]
